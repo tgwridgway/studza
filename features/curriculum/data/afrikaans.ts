@@ -1,0 +1,476 @@
+import type { Flashcard, QuizQuestion, FeynmanTopic, Note } from "@/features/curriculum/types";
+
+export const flashcards: Flashcard[] = [
+  // --- Begrip en Opsomming (Comprehension & Summary) ---
+  { id: 1, unit: "begrip", q: "Wat is die verskil tussen begrip (comprehension) en opsomming (summary)?", a: "Begrip toets jou vermoë om 'n teks te verstaan en vrae daaroor te beantwoord. Opsomming vereis dat jy die hoofpunte van 'n teks in 'n beperkte aantal woorde saamvat (summarise the main points in limited words)." },
+  { id: 2, unit: "begrip", q: "Noem 5 leestrategieë (reading strategies) vir begrip.", a: "1. Skandeer (scan) vir spesifieke inligting\n2. Vlugtig lees (skim) vir hoofgedagte\n3. Intensiewe lees (intensive reading) vir detail\n4. Kontekstuele leidrade (contextual clues) vir woordbetekenis\n5. Voorspelling (prediction) — raai wat volgende kom" },
+  { id: 3, unit: "begrip", q: "Wat is 'n hoofgedagte (main idea) en hoe identifiseer jy dit?", a: "Die hoofgedagte is die sentrale boodskap van 'n paragraaf of teks. Dit word gewoonlik in die eerste of laaste sin gevind. Vra jouself: 'Waaroor gaan hierdie paragraaf hoofsaaklik?'" },
+  { id: 4, unit: "begrip", q: "Hoe beantwoord jy 'n sitaatvraag (quote question) in begrip?", a: "1. Lees die vraag noukeurig\n2. Vind die sitaat in die teks\n3. Lees die konteks rondom die sitaat\n4. Beantwoord in jou eie woorde (answer in your own words)\n5. Gebruik aanhalingstekens as jy direk aanhaal" },
+  { id: 5, unit: "begrip", q: "Wat is die reëls vir 'n opsomming (summary rules)?", a: "1. Lees die teks deeglik\n2. Identifiseer die hoofpunte (main points)\n3. Skryf in jou eie woorde\n4. Hou by die woordgrens (word limit) — gewoonlik 70 woorde\n5. Tel jou woorde en skryf die getal neer\n6. Moenie voorbeelde of herhalings insluit nie\n7. Skryf in een paragraaf, volsinne" },
+  { id: 6, unit: "begrip", q: "Wat beteken 'in jou eie woorde' (in your own words)?", a: "Dit beteken jy moet die inligting herformuleer (paraphrase) — gebruik sinonieme en verander die sinstruktuur. Moenie net woorde uit die teks kopieer nie." },
+  { id: 7, unit: "begrip", q: "Noem 4 tipes begripsvrae (types of comprehension questions).", a: "1. Letterlike vrae (literal) — antwoord direk in die teks\n2. Inferensiële vrae (inferential) — afleidings maak\n3. Evaluerende vrae (evaluative) — jou mening gee\n4. Taalvrae (language) — woordbetekenis, figuurlike taal" },
+  { id: 8, unit: "begrip", q: "Hoe hanteer jy woordeskatvrae (vocabulary questions) in begrip?", a: "1. Lees die sin waarin die woord voorkom\n2. Gebruik kontekstuele leidrade (context clues)\n3. Kyk na voor- en agtervoegsels (prefixes/suffixes)\n4. Gee 'n sinoniem of omskrywing\n5. Maak seker jou antwoord pas in die konteks" },
+  { id: 9, unit: "begrip", q: "Wat is die verskil tussen 'n feit (fact) en 'n mening (opinion)?", a: "Feit: kan bewys word as waar of vals — bv. 'Suid-Afrika het 11 amptelike tale.'\nMening: 'n persoonlike siening wat nie bewys kan word nie — bv. 'Afrikaans is die mooiste taal.'" },
+  { id: 10, unit: "begrip", q: "Hoe identifiseer jy die skrywer se doel (author's purpose)?", a: "Vra: Wil die skrywer\n1. Inlig (inform) — feite en inligting gee\n2. Oorreed (persuade) — die leser oortuig\n3. Vermaak (entertain) — die leser vermaak\n4. Onderrig (instruct) — stappe of instruksies gee\nKyk na taalgebruik, toon, en inhoud vir leidrade." },
+  // --- Gedigte (Poetry) ---
+  { id: 11, unit: "gedigte", q: "Wat is beeldspraak (figurative language)?", a: "Beeldspraak is taal wat nie letterlik bedoel word nie. Dit skep beelde in die leser se gedagtes. Voorbeelde: metafoor, vergelyking, personifikasie." },
+  { id: 12, unit: "gedigte", q: "Wat is die verskil tussen 'n metafoor (metaphor) en 'n vergelyking (simile)?", a: "Metafoor: direkte vergelyking SONDER 'soos' of 'net soos' — bv. 'Die lewe is 'n reis.'\nVergelyking (simile): vergelyking MET 'soos' of 'net soos' — bv. 'Sy lag soos 'n klokkie.'" },
+  { id: 13, unit: "gedigte", q: "Wat is personifikasie (personification)?", a: "Personifikasie is wanneer menslike eienskappe aan nie-menslike dinge toegeken word. Bv. 'Die wind fluister' (the wind whispers) — wind kan nie regtig fluister nie." },
+  { id: 14, unit: "gedigte", q: "Wat is alliterasie (alliteration)?", a: "Alliterasie is die herhaling van dieselfde konsonantklank (consonant sound) aan die begin van opeenvolgende of nabyliggende woorde. Bv. 'Die donker dae van droogte.'" },
+  { id: 15, unit: "gedigte", q: "Wat is assonansie (assonance)?", a: "Assonansie is die herhaling van vokaalklank (vowel sounds) binne woorde naby mekaar. Bv. 'Die lig skyn oor die wye veld.'" },
+  { id: 16, unit: "gedigte", q: "Noem die verskillende rymtipes (types of rhyme).", a: "1. Eindrym (end rhyme): woorde aan die einde van reëls rym\n2. Kruisrym (cross rhyme): ABAB-patroon\n3. Paarrym (couplet rhyme): AABB-patroon\n4. Omarmde rym (enclosed rhyme): ABBA-patroon\n5. Binnerym (internal rhyme): rym binne dieselfde reël" },
+  { id: 17, unit: "gedigte", q: "Wat is 'n strofe (stanza) en 'n versreël (line)?", a: "Strofe (stanza): 'n groep versreëls wat saam hoort, geskei deur wit spasie — soos 'n paragraaf in prosa.\nVersreël (line): een reël van die gedig." },
+  { id: 18, unit: "gedigte", q: "Wat is enjambement (enjambment)?", a: "Enjambement is wanneer 'n sin oor die einde van 'n versreël na die volgende reël voortvloei sonder leesteken. Dit skep 'n vloeiende ritme en beklemtoon sekere woorde." },
+  { id: 19, unit: "gedigte", q: "Hoe analiseer jy 'n gedig se toon (tone) en bui (mood)?", a: "Toon (tone): die digter se houding teenoor die onderwerp — bv. hartseer, kwaad, speels.\nBui (mood): die gevoel wat die gedig by die leser skep — bv. somber, vrolik.\nKyk na woordkeuse (diction), beeldspraak, en klankeffekte vir leidrade." },
+  { id: 20, unit: "gedigte", q: "Wat is 'n tema (theme) in 'n gedig?", a: "Die tema is die sentrale boodskap of onderwerp van die gedig — bv. liefde, dood, natuur, eensaamheid, identiteit. Dit is nie 'n opsomming nie, maar die dieper betekenis." },
+  { id: 21, unit: "gedigte", q: "Hoe struktureer jy 'n gedigvraag-antwoord in die eksamen?", a: "1. Noem die digterlike tegniek (poetic device)\n2. Haal aan uit die gedig (quote from poem)\n3. Verduidelik die effek (explain the effect)\n4. Koppel dit aan die tema of boodskap\nFormule: TEGNIEK + AANHALING + EFFEK + TEMA" },
+  { id: 22, unit: "gedigte", q: "Wat is 'n hiperbool (hyperbole)?", a: "Hiperbool is 'n oordrywing (exaggeration) wat gebruik word vir effek of klem. Bv. 'Ek het 'n miljoen keer gesê' of 'Ek is so honger ek kan 'n perd eet.'" },
+  { id: 23, unit: "gedigte", q: "Wat is onomatopee (onomatopoeia)?", a: "Onomatopee is wanneer 'n woord soos die klank klink wat dit beskryf. Bv. 'sis', 'brom', 'kraak', 'druppel'. Dit skep klankeffekte en maak die gedig meer lewendig." },
+  { id: 24, unit: "gedigte", q: "Wat is ironie (irony) in poësie?", a: "Ironie is wanneer die teenoorgestelde van wat verwag word, gebeur of gesê word.\nVerbale ironie: jy sê die teenoorgestelde van wat jy bedoel.\nSituasionele ironie: die uitkoms is anders as wat verwag is.\nDramatiese ironie: die leser weet iets wat 'n karakter nie weet nie." },
+  { id: 25, unit: "gedigte", q: "Wat is die verskil tussen vrye vers (free verse) en vaste versvorme?", a: "Vrye vers: geen vaste rymskema of metrum nie — die digter kies self die struktuur.\nVaste versvorme: volg vasgestelde reëls vir rym, metrum, en strofes — bv. sonnet (14 reëls)." },
+  // --- Skryfwerk (Writing) ---
+  { id: 26, unit: "skryfwerk", q: "Wat is die struktuur van 'n opstel (essay structure)?", a: "1. Inleiding (introduction): vang aandag, stel onderwerp voor\n2. Liggaam (body): 3–5 paragrawe met hoofpunte en voorbeelde\n3. Slot (conclusion): som op, gee finale gedagte\nElke paragraaf het 'n topiksin (topic sentence), ondersteuning, en 'n slotsin." },
+  { id: 27, unit: "skryfwerk", q: "Wat is die verskil tussen 'n formele (formal) en informele (informal) brief?", a: "Formele brief: saaklike taal, volledige adres, 'Geagte Mnr./Mev.', 'Die uwe'\nInformele brief: vriendskaplike taal, net jou adres, 'Liewe [naam]', 'Liefde/Groete'\nFormeel = aan vreemdelinge/amptelik. Informeel = aan vriende/familie." },
+  { id: 28, unit: "skryfwerk", q: "Noem die formaat van 'n formele brief (formal letter format).", a: "1. Jou adres (regs bo)\n2. Datum\n3. Ontvanger se adres (links)\n4. Aanhef: 'Geagte Mnr./Mev. [Van]'\n5. Onderwerpreël (subject line)\n6. Liggaam van brief\n7. Groet: 'Die uwe' (Yours faithfully/sincerely)\n8. Handtekening en naam" },
+  { id: 29, unit: "skryfwerk", q: "Hoe skryf jy 'n goeie inleiding (introduction) vir 'n opstel?", a: "Strategieë:\n1. Begin met 'n vraag (rhetorical question)\n2. Begin met 'n aanhaling (quote)\n3. Begin met 'n stelling (bold statement)\n4. Begin met 'n anekdote (short story)\n5. Skets die agtergrond\nDie inleiding moet die leser se aandag vang en die onderwerp bekendstel." },
+  { id: 30, unit: "skryfwerk", q: "Wat is 'n artikel (article) se formaat?", a: "1. Pakkende opskrif (catchy headline)\n2. Subtitel of byskrif (optional)\n3. Inleiding — wie, wat, waar, wanneer, waarom\n4. Liggaam — besonderhede, aanhalings, feite\n5. Slot — opsomming of oproep tot aksie\nSkryf in kolomme-styl, kort paragrawe." },
+  { id: 31, unit: "skryfwerk", q: "Wat is die kenmerke van 'n dialoog (dialogue)?", a: "1. Gebruik aanhalingstekens (quotation marks)\n2. Elke spreker se woorde begin op 'n nuwe reël\n3. Gebruik sê-werkwoorde (said-verbs): sê, vra, antwoord, fluister, skree\n4. Sluit toneelaanwysings in (stage directions): liggaamstaal, emosie\n5. Moet natuurlik klink" },
+  { id: 32, unit: "skryfwerk", q: "Wat is die verskil tussen beskrywende (descriptive) en argumentatiewe (argumentative) skryfwerk?", a: "Beskrywend: gebruik sintuie (senses) om 'n prentjie te skep — sien, hoor, ruik, voel, proe. Doel: laat die leser dit ervaar.\nArgumentatief: neem 'n standpunt in en oortuig die leser met redes, feite, en voorbeelde. Doel: oortuig (persuade)." },
+  { id: 33, unit: "skryfwerk", q: "Noem 5 tipes skryfwerk in die Afrikaans-eksamen.", a: "1. Opstel (essay) — narratief, beskrywend, of argumentatief\n2. Formele brief (formal letter)\n3. Informele brief (informal/friendly letter)\n4. Artikel (article)\n5. Dialoog (dialogue)\n6. Dagboekinskrywing (diary entry)\n7. Toespraak (speech)" },
+  { id: 34, unit: "skryfwerk", q: "Hoe skryf jy 'n argumentatiewe opstel (argumentative essay)?", a: "1. Inleiding: stel die kwessie (issue) en jou standpunt (stance)\n2. Argument 1 + bewys (evidence)\n3. Argument 2 + bewys\n4. Teenargument (counter-argument) en weerlegging (rebuttal)\n5. Slot: herbevestig jou standpunt, oproep tot aksie\nGebruik verbindingswoorde: daarom, gevolglik, aan die ander kant" },
+  { id: 35, unit: "skryfwerk", q: "Wat is verbindingswoorde (connectives/linking words)? Gee voorbeelde.", a: "Verbindingswoorde verbind idees en sinne:\n- Byvoeging: ook, boonop, verder, daarbenewens (also, moreover)\n- Kontras: maar, egter, nogtans (but, however)\n- Oorsaak: omdat, want, aangesien (because, since)\n- Gevolg: daarom, gevolglik, dus (therefore)\n- Tyd: eerstens, daarna, ten slotte (firstly, then, finally)" },
+  { id: 36, unit: "skryfwerk", q: "Wat is die assesseringskriteria (assessment criteria) vir skryfwerk?", a: "1. Inhoud en beplanning (content & planning) — 30 punte\n2. Taal, styl en redigering (language, style & editing) — 15 punte\n3. Struktuur (structure) — 5 punte\nTotaal: 50 punte." },
+  { id: 37, unit: "skryfwerk", q: "Hoe skryf jy 'n dagboekinskrywing (diary entry)?", a: "1. Datum regbo\n2. Aanhef: 'Liewe Dagboek' (Dear Diary)\n3. Skryf in eerste persoon (ek/my)\n4. Deel gedagtes, gevoelens, en ervarings\n5. Informele, persoonlike toon\n6. Slot: 'Tot môre' of soortgelyk" },
+  { id: 38, unit: "skryfwerk", q: "Wat is register (register) in taalgebruik?", a: "Register is die vlak van formaliteit in jou taalgebruik.\nFormeel: saaklik, beleefd, geen sleng — bv. formele brief, toespraak\nInformeel: vriendskaplik, ontspanne, sleng toegelaat — bv. informele brief, dialoog\nJy moet die regte register vir die situasie kies." },
+  { id: 39, unit: "skryfwerk", q: "Hoe beplan jy 'n opstel voor jy begin skryf?", a: "1. Lees die onderwerp noukeurig\n2. Brainstorm idees (dinkskrum)\n3. Maak 'n gedagtekart (mind map) of lys\n4. Organiseer idees in logiese volgorde\n5. Skryf 'n kort raamwerk: inleiding, liggaam (3-5 punte), slot\n6. Begin skryf en hou by jou plan" },
+  { id: 40, unit: "skryfwerk", q: "Wat is 'n toespraak (speech) se formaat?", a: "1. Aanhef: 'Geagte [gehoor]' of 'Dames en Here'\n2. Inleiding: stel onderwerp voor, vang aandag\n3. Liggaam: hoofpunte met voorbeelde\n4. Slot: opsomming, oproep tot aksie\n5. Retoriese vrae en herhalings vir effek\n6. Direkte aanspreekvorm ('julle', 'ons')" },
+  // --- Taalstrukture en -konvensies (Language Structures & Conventions) ---
+  { id: 41, unit: "taalstrukture", q: "Noem die drie tye (tenses) in Afrikaans en gee 'n voorbeeld van elkeen.", a: "1. Teenwoordige tyd (present tense): Die kind speel in die tuin.\n2. Verlede tyd (past tense): Die kind het in die tuin gespeel.\n3. Toekomende tyd (future tense): Die kind sal in die tuin speel.\nLet op: Afrikaans gebruik 'het + voltooide deelwoord' vir verlede tyd." },
+  { id: 42, unit: "taalstrukture", q: "Hoe vorm jy die verlede tyd (past tense) in Afrikaans?", a: "Gebruik 'het' + voltooide deelwoord (past participle).\nVoltooide deelwoord: voeg 'ge-' voor die werkwoord of gebruik onreëlmatige vorme.\nBv: speel \u2192 gespeel; skryf \u2192 geskryf; loop \u2192 geloop\nOnreëlmatig: is \u2192 was; het \u2192 gehad; kan \u2192 kon" },
+  { id: 43, unit: "taalstrukture", q: "Wat is direkte rede (direct speech) en hoe skryf jy dit?", a: "Direkte rede haal die presiese woorde van 'n spreker aan.\nReëls:\n1. Gebruik aanhalingstekens: 'Ek is honger,' sê hy.\n2. Gebruik 'n komma voor aanhalingstekens as 'sê' eerste kom: Hy sê, 'Ek is honger.'\n3. Die eerste woord binne aanhalingstekens begin met 'n hoofletter." },
+  { id: 44, unit: "taalstrukture", q: "Wat is indirekte rede (indirect speech) en hoe omskep jy direkte rede daarna?", a: "Indirekte rede rapporteer wat gesê is sonder aanhalingstekens.\nVeranderings:\n- Verander voornaamwoorde: 'ek' \u2192 'hy/sy'\n- Verander tyd: teenwoordig \u2192 verlede\n- Voeg 'dat' in\nBv: 'Ek is honger,' sê hy. \u2192 Hy sê dat hy honger is." },
+  { id: 45, unit: "taalstrukture", q: "Wat is die lydende vorm (passive voice) en hoe vorm jy dit?", a: "In die lydende vorm (passive) ondergaan die onderwerp die handeling — dit gebeur met hom.\nFormule: word/is + voltooide deelwoord (deur + agent)\nBv: Die hond byt die kind. (bedrywend/active)\n\u2192 Die kind word deur die hond gebyt. (lydend/passive)" },
+  { id: 46, unit: "taalstrukture", q: "Wat is die bedrywende vorm (active voice)?", a: "In die bedrywende vorm (active voice) voer die onderwerp die handeling uit.\nBv: Die seun gooi die bal. — Die seun (onderwerp) voer die handeling uit.\nDie bedrywende vorm is direk en kragtig. Die lydende vorm word gebruik om die handeling of voorwerp te beklemtoon." },
+  { id: 47, unit: "taalstrukture", q: "Noem 5 voegwoorde (conjunctions) en verduidelik hul gebruik.", a: "Voegwoorde verbind sinne of sinsdele:\n1. en (and) — byvoeging: Ek eet en drink.\n2. maar (but) — kontras: Ek wil, maar ek kan nie.\n3. want (because) — oorsaak: Ek bly tuis want ek is siek.\n4. of (or) — keuse: Koffie of tee?\n5. sodat (so that) — doel: Ek studeer sodat ek slaag." },
+  { id: 48, unit: "taalstrukture", q: "Noem die persoonlike voornaamwoorde (personal pronouns) in Afrikaans.", a: "Enkelvoud (singular): ek (I), jy/jou (you), hy/hom (he/him), sy/haar (she/her), dit (it)\nMeervoud (plural): ons (we/us), julle (you all), hulle/hul (they/them)\nBeleefd (polite): u (you — formal, to elders)" },
+  { id: 49, unit: "taalstrukture", q: "Hoe gebruik jy byvoeglike naamwoorde (adjectives) in Afrikaans?", a: "Byvoeglike naamwoorde beskryf selfstandige naamwoorde.\nVoor 'n naamwoord kry dit gewoonlik 'e': 'n mooi dag \u2192 'n mooie dag (nee — 'n mooi dag bly onveranderd vir enkelvoud!)\nMeervoud: mooi dae; lekker kos (geen verandering nie by sekere)\nTrappe: mooi \u2192 mooier \u2192 mooiste (positive \u2192 comparative \u2192 superlative)" },
+  { id: 50, unit: "taalstrukture", q: "Wat is bywoorde (adverbs) en gee voorbeelde van verskillende tipes.", a: "Bywoorde verander werkwoorde, byvoeglike naamwoorde, of ander bywoorde.\nTipe voorbeelde:\n- Tyd (time): nou, gister, m\u00f4re, altyd (now, yesterday, tomorrow, always)\n- Plek (place): hier, daar, buite, binne (here, there, outside, inside)\n- Wyse (manner): vinnig, stadig, noukeurig (quickly, slowly, carefully)\n- Graad (degree): baie, glad nie, nogal (very, not at all, quite)" },
+  { id: 51, unit: "taalstrukture", q: "Wat is die dubbele negatief (double negative) in Afrikaans?", a: "Afrikaans gebruik 'n dubbele negatief: 'nie' kom voor EN aan die einde van die sin.\nBv: Ek gaan nie skool toe nie.\nEk eet nie vleis nie.\nDit is grammatikaal korrek in Afrikaans (nie 'n fout nie!).\nSoms is slegs een 'nie' nodig in kort sinne: Hy weet nie." },
+  { id: 52, unit: "taalstrukture", q: "Noem die trappe van vergelyking (degrees of comparison) met voorbeelde.", a: "Positief (positive): groot, mooi, vinnig\nKomparatief (comparative): groter, mooier, vinniger\nSuperlatief (superlative): grootste, mooiste, vinnigste\nOnreëlmatig:\nbaie \u2192 meer \u2192 meeste\ngoed \u2192 beter \u2192 beste\nmin \u2192 minder \u2192 minste" },
+  { id: 53, unit: "taalstrukture", q: "Noem 5 algemene afkortings (abbreviations) in Afrikaans.", a: "bv. = byvoorbeeld (for example)\nmnr. = meneer (Mr.)\nmev. = mevrou (Mrs./Ms.)\ndws. = dit wil sê (that is / i.e.)\nnl. = naamlik (namely)\nens. = ensovoorts (etc.)\ndrs. = doktors (Dr.)\nprof. = professor" },
+  { id: 54, unit: "taalstrukture", q: "Verduidelik die gebruik van die komma (comma) in Afrikaans.", a: "Kommas gebruik jy vir:\n1. Reekse: Ek het brood, botter, kaas en melk gekoop.\n2. Tussinwerpsels: Ja, ek verstaan.\n3. Bystellings: My broer, 'n dokter, woon in Kaapstad.\n4. Voorwaardelike sinne: As dit reën, bly ek tuis.\n5. Om 'sê' van direkte rede te skei: Hy sê, 'Ek kom.'" },
+  { id: 55, unit: "taalstrukture", q: "Wanneer gebruik jy 'n koppelteken (hyphen) in Afrikaans?", a: "Koppeltekens gebruik jy vir:\n1. Samestellings: swart-wit, groen-blou\n2. Herhaling: kits-kits, gou-gou\n3. Tal-samestellings: twee-en-twintig, ses-en-sestig\n4. Afkortings met letters: e-pos (email), s.a. (sans anno)\n5. Aaneen of apart? Sommige woorde kan aaneen geskryf word: reënjas" },
+  { id: 56, unit: "taalstrukture", q: "Hoe omskep jy 'n sin van bedrywende na lydende vorm?", a: "Stappe:\n1. Die voorwerp (object) word die nuwe onderwerp\n2. Gebruik 'word' (present) of 'is' (past) + voltooide deelwoord\n3. Die oorspronklike onderwerp word 'deur + agent'\nBv: Die hond (onderwerp) jaag die kat (voorwerp).\n\u2192 Die kat word deur die hond gejaag." },
+  { id: 57, unit: "taalstrukture", q: "Wat is die verskil tussen 'omdat' en 'want' as voegwoorde?", a: "Beide beteken 'because' maar funksioneer verskillend:\n'Want' verbind hoofsinne: Ek bly tuis, want ek is siek. (begin 'n nuwe hoofsin)\n'Omdat' lei 'n bysin in: Ek bly tuis omdat ek siek is. (bysin, werkwoord aan die einde)\nNa 'want' = normale woordorde. Na 'omdat' = bysin-woordorde." },
+  { id: 58, unit: "taalstrukture", q: "Noem die besitlike voornaamwoorde (possessive pronouns) in Afrikaans.", a: "my (my), jou (your), sy (his), haar (her), ons (our), julle (your - plural), hul/hulle (their)\nBv: Dit is my boek. Waar is sy tas?\nBy besitlike konstruksies ook: die boek van my ma (the book of my mother)" },
+  // --- Literatuur (Literature) ---
+  { id: 59, unit: "literatuur", q: "Noem die ses elemente van 'n kortverhaal (short story elements).", a: "1. Plot (gebeure/handeling) — wat gebeur\n2. Karakters (characters) — wie\n3. Milieu/Omgewing (setting) — waar en wanneer\n4. Tema (theme) — die dieper boodskap\n5. Konflik (conflict) — die probleem of spanning\n6. Vertellersperspektief (narrative perspective) — wie vertel" },
+  { id: 60, unit: "literatuur", q: "Wat is die verskillende tipes konflik (types of conflict) in literatuur?", a: "1. Mens teen mens (person vs. person) — karakter teen karakter\n2. Mens teen natuur (person vs. nature) — karakter teen omgewing\n3. Mens teen samelewing (person vs. society) — karakter teen sosiale norme\n4. Mens teen self (person vs. self) — innerlike konflik, gewetensworsteling\n5. Mens teen lot (person vs. fate) — teen onvermydelike omstandighede" },
+  { id: 61, unit: "literatuur", q: "Wat is die verloop van 'n plot (plot structure)?", a: "1. Inleiding/Eksposisie (exposition): karakters en milieu word bekendstel\n2. Stygende aksie (rising action): spanning bou op\n3. Klimaks (climax): hoogtepunt van spanning\n4. Dalende aksie (falling action): gevolge van klimaks\n5. Ontknoping/Slot (resolution/denouement): konflik word opgelos" },
+  { id: 62, unit: "literatuur", q: "Wat is die verskil tussen 'n plat karakter (flat character) en 'n ronde karakter (round character)?", a: "Plat karakter (flat/static): eendimensioneel, verander nie, het een of twee eienskappe — bv. die skurk wat altyd sleg is.\nRonde karakter (round/dynamic): kompleks, realisties, ontwikkel en verander deur die verhaal — bv. 'n held wat groei deur uitdagings." },
+  { id: 63, unit: "literatuur", q: "Noem 4 tipes vertellersperspektief (narrative perspective).", a: "1. Eerste persoon (first person): 'ek' vertel — ons sien deur een karakter se oë\n2. Derde persoon alwetend (third person omniscient): verteller weet alles oor alle karakters\n3. Derde persoon beperk (third person limited): volg een karakter se perspektief\n4. Tweede persoon (second person): gebruik 'jy' — seldsaam, skep intimiteit" },
+  { id: 64, unit: "literatuur", q: "Wat is ironie (irony) in literatuur? Noem drie tipes.", a: "1. Verbale ironie (verbal irony): jy sê die teenoorgestelde van wat jy bedoel — bv. 'Pragtige weer!' tydens 'n storm\n2. Situasionele ironie (situational irony): die uitkoms is anders as verwag — bv. 'n brandweerstasie wat afbrand\n3. Dramatiese ironie (dramatic irony): die leser weet iets wat die karakter nie weet nie — skep spanning" },
+  { id: 65, unit: "literatuur", q: "Wat is simboliek (symbolism) in literatuur?", a: "Simboliek is wanneer 'n voorwerp, persoon, plek, of gebeurtenis iets dieper beteken as sy letterlike betekenis.\nBv: 'n duif simboliseer vrede; 'n slang kan gevaar of verleiding simboliseer; donkerte simboliseer dikwels onwetendheid of boosheid.\nDie skrywer gebruik simbole om temas en boodskappte te versterk." },
+  { id: 66, unit: "literatuur", q: "Wat is vooruitwysing (foreshadowing) in 'n verhaal?", a: "Vooruitwysing is wanneer die skrywer leidrade gee oor wat later in die verhaal sal gebeur.\nDit skep verwagting (anticipation) en spanning (suspense).\nBv: In die begin van 'n verhaal beskryf die skrywer donker wolke — dit kan op komende probleme wys." },
+  { id: 67, unit: "literatuur", q: "Hoe ontleed jy die milieu (setting) van 'n verhaal?", a: "Milieu bestaan uit:\n1. Plek (place): waar gebeur die verhaal?\n2. Tyd (time): wanneer — historiese periode, dag/nag, seisoen\n3. Atmosfeer (atmosphere): die stemming wat die omgewing skep\nVra: Hoe dra die milieu by tot die tema en konflik? Speel die omgewing 'n simboliese rol?" },
+  { id: 68, unit: "literatuur", q: "Noem 6 literêre terme (literary terms) wat jy moet ken.", a: "1. Metafoor (metaphor) — direkte vergelyking\n2. Ironie (irony) — teenoorgestelde betekenis\n3. Simboliek (symbolism) — dieper betekenis\n4. Vooruitwysing (foreshadowing) — leidrade oor die toekoms\n5. Klimaks (climax) — hoogtepunt\n6. Ontknoping (denouement) — slot\n7. Vertellersperspektief (narrative perspective)\n8. Konflik (conflict)" },
+  { id: 69, unit: "literatuur", q: "Hoe skryf jy 'n karakterontleding (character analysis)?", a: "1. Beskryf die karakter se uiterlike voorkoms (appearance)\n2. Bespreek sy/haar persoonlikheid (personality) met voorbeelde uit die teks\n3. Analiseer sy/haar verhoudings (relationships) met ander karakters\n4. Kyk na sy/haar ontwikkeling (development) deur die verhaal\n5. Koppel die karakter aan die tema van die verhaal" },
+  { id: 70, unit: "literatuur", q: "Wat is die verskil tussen tema (theme) en onderwerp (subject) in literatuur?", a: "Onderwerp (subject): waaroor die verhaal gaan — bv. 'n jong seun se avontuur\nTema (theme): die dieper boodskap of lewensles — bv. moed, vriendskap, of dat goeie soms lyding kos\nDie tema is 'n abstrakte konsep. Bv: Onderwerp = oorlog. Tema = die sinloosheid van geweld." },
+  { id: 71, unit: "literatuur", q: "Hoe analiseer jy 'n roman (novel) vir die eksamen?", a: "Fokus op:\n1. Plot — verloop van gebeure (inleiding tot slot)\n2. Hoofkarakters — ronde karakters, hul ontwikkeling\n3. Milieu — invloed op karakters en gebeure\n4. Temas — minstens 2-3 hooftemas\n5. Skrywersstyl — vertellersperspektief, taalgebruik\n6. Persoonlike reaksie — hoe het die boek jou geraak en waarom" },
+  { id: 72, unit: "literatuur", q: "Wat beteken 'konteks' (context) in literêre analise?", a: "Konteks verwys na die omstandighede rondom 'n teks:\n1. Historiese konteks: wanneer is dit geskryf en wat het gebeur toe?\n2. Kulturele konteks: watter kultuur of samelewing word geskets?\n3. Biografiese konteks: het die skrywer se lewe die werk beïnvloed?\n4. Tekstuele konteks: hoe pas 'n spesifieke deel in by die res van die teks?" },
+  { id: 73, unit: "literatuur", q: "Wat is 'n kortverhaal se onderskeidende kenmerke teenoor 'n roman?", a: "Kortverhaal:\n- Korter — een sentrale konflik\n- Beperkte karakters — een of twee hoofkarakters\n- Enkelvoudige plot — geen subplotte\n- Sterk eindpunt — dikwels 'n verrassende einde\n- Fokus op 'n enkele moment of krisis\nRoman: meer karakters, subplotte, langer tydperk, meer kompleks" },
+  // --- Mondelinge (Oral) ---
+  { id: 74, unit: "mondelinge", q: "Wat is die verskil tussen 'n voorbereide toespraak (prepared speech) en 'n onvoorbereide toespraak?", a: "Voorbereide toespraak: jy kry tyd om voor te berei, te beplan, en te oefen. Jy ken die onderwerp vooraf.\nOnvoorbereide toespraak (impromptu): jy kry die onderwerp direk voor die toespraak — gewoonlik 1-2 minute voorbereiding. Jy moet vinnig organiseer en spontaan praat." },
+  { id: 75, unit: "mondelinge", q: "Wat is die formaat van 'n goeie voorbereide toespraak?", a: "1. Aanhef: groet die gehoor ('Goeie more/middag, dames en here')\n2. Inleiding: stel die onderwerp voor, vang aandag\n3. Liggaam: 2-3 hoofpunte, elk met voorbeelde\n4. Slot: samevatting en afsluitingsgedagte\n5. Afskeid: bedank die gehoor\nKenmerke: duidelik, georganiseer, binne tydgrens" },
+  { id: 76, unit: "mondelinge", q: "Noem 5 assesseringskriteria (assessment criteria) vir mondelinge.", a: "1. Inhoud (content): is die inligting relevant en georganiseer?\n2. Taalgebruik (language use): woordeskat, grammatika, register\n3. Voordrag (delivery): toon, pas, volume\n4. Liggaamstaal (body language): oogkontak, houding, gebare\n5. Tyd (time): binne die vasgestelde tyd" },
+  { id: 77, unit: "mondelinge", q: "Wat is effektiewe oogkontak (eye contact) tydens 'n toespraak?", a: "Oogkontak beteken jy kyk na jou gehoor, nie net na jou notas nie.\nTegnieke:\n- Kyk na verskillende dele van die klas/gehoor\n- Hou oogkontak vir 2-3 sekondes per persoon\n- Gebruik jou notas as leidraad, maar kyk op wanneer jy praat\n- Oogkontak skep vertroue en betrokkenheid" },
+  { id: 78, unit: "mondelinge", q: "Hoe verbeter jy jou uitspraak (pronunciation) en verstaanbaarheid?", a: "1. Praat stadig en duidelik — moenie sluk nie\n2. Artikuleer alle klanke, veral aan die einde van woorde\n3. Wissel jou toon (pitch) en volume — moenie monotoon wees nie\n4. Maak pouses op die regte plekke — laat jou gehoor tyd om te absorbeer\n5. Oefen voor 'n spieël of neem jouself op\n6. Praat hard genoeg dat almal kan hoor" },
+  { id: 79, unit: "mondelinge", q: "Wat is luisterbegrip (listening comprehension) en hoe berei jy voor?", a: "Luisterbegrip toets jou vermoë om gesproke teks te verstaan.\nStrategieë:\n1. Lees die vrae VOOR jy luister\n2. Maak aantekeninge (notes) terwyl jy luister\n3. Fokus op hoofpunte, nie elke woord nie\n4. Kyk vir sleutelwoorde wat in die vrae voorkom\n5. Beantwoord in volsinne, gebruik teks-gebaseerde bewyse" },
+  { id: 80, unit: "mondelinge", q: "Noem 6 wenke vir effektiewe voorlees (reading aloud).", a: "1. Lees die teks eers stilleees deur\n2. Verstaan die inhoud en boodskap\n3. Maak pouses by kommas en punte\n4. Beklemtoon sleutelwoorde (stress key words)\n5. Wissel jou toon vir verskillende karakters/emosies\n6. Praat duidelik en nie te vinnig nie\n7. Hou kontak met die teks — blaai rustig" },
+  { id: 81, unit: "mondelinge", q: "Hoe hanteer jy senuweeagtigheid (nervousness) voor 'n toespraak?", a: "1. Berei deeglik voor — kennis verminder angs\n2. Oefen verskeie kere, ook voor ander mense\n3. Haal diep asem voor jy begin\n4. Onthou: die gehoor wil hê jy moet slaag\n5. Fokus op jou boodskap, nie op jouself nie\n6. Begin met 'n glimlag — dit ontspan jou en die gehoor\n7. Gebruik notas as ondersteuning" },
+  { id: 82, unit: "mondelinge", q: "Wat is die rol van liggaamstaal (body language) in 'n toespraak?", a: "Liggaamstaal kommunikeer soms meer as woorde:\n1. Houding (posture): staan regop, skouers terug — toon selfvertroue\n2. Gebare (gestures): gebruik hande natuurlik om punte te beklemtoon\n3. Gesigsuitdrukkings (facial expressions): moet by jou boodskap pas\n4. Beweging (movement): beweeg doelgerig, nie wiegelend nie\n5. Afstand: respekteer die gehoor se ruimte" },
+  { id: 83, unit: "mondelinge", q: "Wat is die verskil tussen toon (tone), volume, en pas (pace) in voordrag?", a: "Toon (tone/pitch): die hoogte of diepte van jou stem — wissel dit om interessant te wees\nVolume: hoe hard jy praat — luid genoeg vir almal, maar nie skreeuend\nPas (pace): die spoed van jou spraak — nie te vinnig (senuweeagtig) of te stadig (verveeld)\nAlmal drie saam skep 'n boeiende voordrag." },
+  { id: 84, unit: "mondelinge", q: "Hoe struktureer jy 'n onvoorbereide toespraak binne 2 minute?", a: "In die voorbereide tyd:\n1. Besluit op jou hoofpunt (thesis)\n2. Dink aan 2-3 ondersteunende idees\n3. Beplan 'n inleiding en slot\nTydens die toespraak:\n- Begin met 'n sterk openingsin\n- Ontwikkel elke punt kortliks\n- Eindig met 'n sterk slotsin\n- Hou oogkontak en praat duidelik" },
+  // --- Visuele Geletterdheid (Visual Literacy) ---
+  { id: 85, unit: "visueel", q: "Wat is visuele geletterdheid (visual literacy)?", a: "Visuele geletterdheid is die vermoë om visuele tekste (images, graphics, designs) te lees, te interpreteer, en te analiseer — net soos jy geskrewe tekste analiseer.\nVisuele tekste sluit in: spotprente, advertensies, grafieke, foto's, kaarte, tabelle." },
+  { id: 86, unit: "visueel", q: "Hoe analiseer jy 'n spotprent (cartoon)?", a: "Vra die volgende:\n1. Wie/wat word uitgebeeld? (Who/what is depicted?)\n2. Wat is die konteks? (What is the context?)\n3. Watter simbole (symbols) word gebruik?\n4. Wat is die boodskap (message)?\n5. Watter tegnieke: oordrywing (exaggeration), sarkasme, satire?\n6. Wat is die skrywer se siening (opinion/bias)?" },
+  { id: 87, unit: "visueel", q: "Noem 5 elemente van advertensie-analise (advertisement analysis).", a: "1. Teikengehoor (target audience): vir wie is die advertensie?\n2. Doel (purpose): wat probeer dit bereik?\n3. Visuele elemente: kleur, uitleg, beelde, lettertipe\n4. Taalgebruik (language): slagspreuk (slogan), retoriese vrae\n5. Oorreedingstegnieke (persuasive techniques): beroep op emosie, outoriteit, statistiek" },
+  { id: 88, unit: "visueel", q: "Hoe lees jy 'n grafiek (graph) of tabel (table)?", a: "1. Lees die opskrif (title) — waaroor gaan dit?\n2. Lees die asse (axes) — wat word gemeet?\n3. Lees die legenda (legend/key) indien van toepassing\n4. Identifiseer tendense (trends): styg, daal, bly konstant\n5. Maak afleidings (inferences) uit die data\n6. Beantwoord vrae spesifiek met data-verwysings" },
+  { id: 89, unit: "visueel", q: "Wat is 'n slagspreuk (slogan) en wat maak 'n goeie slagspreuk?", a: "Slagspreuk (slogan): 'n kort, gedenkwaardige frase wat 'n produk of idee bevorder.\nEienskappe van 'n goeie slagspreuk:\n1. Kort en kragtig (short and punchy)\n2. Maklik om te onthou (memorable)\n3. Dui op die produk se voordeel\n4. Gebruik dikwels rym, alliterasie, of woordspel\nBv: 'Dis die egte ding' (It's the real thing)" },
+  { id: 90, unit: "visueel", q: "Noem 4 oorreedingstegnieke (persuasive techniques) in visuele tekste.", a: "1. Beroep op emosie (appeal to emotion/pathos): gebruik beelde/woorde wat gevoelens wek\n2. Beroep op outoriteit (appeal to authority/ethos): kundiges of beroemdes wat die produk aanbeveel\n3. Beroep op rede (appeal to logic/logos): statistiek en feite\n4. Bandwagon: 'Almal gebruik dit — jy behoort ook'\n5. Skaarsheid (scarcity): 'Beperk aanbod — koop nou!'" },
+  { id: 91, unit: "visueel", q: "Hoe dra kleur (colour) betekenis oor in visuele tekste?", a: "Kleure het konnotatiewe betekenis:\n- Rooi: gevaar, passie, energie, dringendheid\n- Blou: vertroue, kalmte, professioneel, betroubaar\n- Groen: natuur, gesondheid, geld, groei\n- Geel: geluk, waarskuwing, aandag\n- Swart: krag, elegansie, rou, formaliteit\n- Wit: suiwerheid, eenvoud, onskuld\nKleurkeuse is doelbewus in advertensies en visuele ontwerp." },
+  { id: 92, unit: "visueel", q: "Wat is uitleg (layout) in visuele tekste en waarom is dit belangrik?", a: "Uitleg verwys na die rangskikking van elemente op 'n bladsy of skerm:\n- Kopskrif (heading): bo, groot, trek aandag\n- Beelde (images): posisionering vertel 'n storie\n- Teks: kolom-uitleg, lettertipe-grootte\n- Witruimte (white space): gee die oog 'n rusplek\nUitleg lei die kyker se oog en bepaal watter elemente die meeste aandag kry." },
+  { id: 93, unit: "visueel", q: "Wat is propagandategnieke (propaganda techniques) in visuele tekste?", a: "Propaganda gebruik visuele en taalmiddels om mense se denke te manipuleer:\n1. Stereotipering: vereenvoudiging van 'n groep mense\n2. Vigstige benaming (name-calling): negatiewe etikette\n3. Kaartleg (card-stacking): slegs positiewe feite toon\n4. Glittering generalities: vae, positiewe woorde sonder bewyse\n5. Getuienis (testimonial): beroemde mense onderskryf 'n idee" },
+  { id: 94, unit: "visueel", q: "Wat is 'n ikoon (icon), indeks (index), en simbool (symbol) in semiotiek?", a: "Semiotiek is die studie van tekens (signs):\n- Ikoon (icon): lyk soos wat dit voorstel — bv. 'n foto van 'n hond\n- Indeks (index): het 'n direkte verband — bv. rook = vuur\n- Simbool (symbol): arbitrêre verband, aangeleer — bv. 'n rooi stop-teken\nIn visuele analise vra ons: is hierdie 'n ikoon, indeks, of simbool?" },
+  { id: 95, unit: "visueel", q: "Hoe analiseer jy lettertipe (font) in 'n visuele teks?", a: "Lettertipe dra betekenis oor:\n- Seriflettertipe (serif — bv. Times New Roman): tradisioneel, formeel, betroubaar\n- Sans-seriflettertipe (sans-serif — bv. Arial): modern, skoon, toeganklik\n- Vetdruk (bold): beklemtoning, krag\n- Kursief (italic): klem, elegansie\n- Lettertipe-grootte: groot = belangrik; Klein = sekondêr\nVra: waarom het die ontwerper hierdie lettertipe gekies?" },
+  { id: 96, unit: "visueel", q: "Wat is die verskil tussen denotatiewe (denotative) en konnotatiewe (connotative) betekenis in visuele tekste?", a: "Denotatiewe betekenis (denotation): die letterlike, direkte betekenis — wat jy fisies sien.\nBv: 'n foto van 'n roosblom — 'n rooi plant met blare.\nKonnotatiewe betekenis (connotation): die assosiasie of emosionele betekenis.\nBv: 'n roosblom = liefde, romance, of selfs gevaar (dorings).\nVisuele analise gaan verder as net wat jy sien." },
+];
+
+export const quizQuestions: QuizQuestion[] = [
+  // --- Begrip en Opsomming ---
+  { id: 1, unit: "begrip", question: "Wat is die woordlimiet vir 'n opsomming in die Afrikaans-eksamen?", options: ["50 woorde", "70 woorde", "100 woorde", "90 woorde"], correct: 1, explanation: "Die opsomming moet gewoonlik in 70 woorde of minder geskryf word. Jy moet jou woorde tel en die getal neerskryf." },
+  { id: 2, unit: "begrip", question: "'n Inferensiële vraag (inferential question) vereis dat jy:", options: ["Die antwoord direk uit die teks haal", "Afleidings maak uit die teks (make inferences)", "Jou persoonlike mening gee", "Die taal van die teks analiseer"], correct: 1, explanation: "Inferensiële vrae vereis dat jy afleidings maak — die antwoord staan nie direk in die teks nie, maar jy moet dit aflei uit die konteks." },
+  { id: 3, unit: "begrip", question: "Watter strategie gebruik jy om vinnig spesifieke inligting in 'n teks te vind?", options: ["Intensiewe lees", "Skandeer (scanning)", "Vlugtig lees (skimming)", "Krities lees"], correct: 1, explanation: "Skandeer (scanning) is wanneer jy soek na spesifieke inligting soos 'n naam, datum, of syfer sonder om die hele teks te lees." },
+  { id: 4, unit: "begrip", question: "In 'n opsomming mag jy NIE die volgende doen nie:", options: ["In jou eie woorde skryf", "Voorbeelde en herhalings insluit", "Volsinne gebruik", "Die hoofpunte identifiseer"], correct: 1, explanation: "In 'n opsomming moet jy voorbeelde, herhalings, en onnodige besonderhede weglaat. Fokus net op die hoofpunte." },
+  { id: 5, unit: "begrip", question: "Wat beteken dit om 'kontekstuele leidrade' (context clues) te gebruik?", options: ["Die woordeboek gebruik", "Die omliggende woorde en sinne gebruik om betekenis af te lei", "Die titel van die teks lees", "Die skrywer se biografie lees"], correct: 1, explanation: "Kontekstuele leidrade beteken jy gebruik die woorde en sinne rondom 'n onbekende woord om die betekenis daarvan af te lei." },
+  { id: 6, unit: "begrip", question: "Die hoofgedagte van 'n paragraaf word gewoonlik gevind in die:", options: ["Middel van die paragraaf", "Eerste of laaste sin", "Titel van die teks", "Voetnote"], correct: 1, explanation: "Die hoofgedagte (main idea) word gewoonlik in die eerste sin (topiksin) of laaste sin van 'n paragraaf gevind." },
+  // --- Gedigte ---
+  { id: 7, unit: "gedigte", question: "'Die son lag vir die wêreld' is 'n voorbeeld van:", options: ["Metafoor", "Vergelyking", "Personifikasie", "Alliterasie"], correct: 2, explanation: "Dit is personifikasie omdat die son (nie-menslik) 'n menslike handeling (lag) toegeken word." },
+  { id: 8, unit: "gedigte", question: "'Sy oë is sterre' is 'n voorbeeld van 'n:", options: ["Vergelyking (simile)", "Metafoor (metaphor)", "Personifikasie", "Hiperbool"], correct: 1, explanation: "Dit is 'n metafoor omdat dit 'n direkte vergelyking maak SONDER 'soos' of 'net soos'. Sy oë WORD sterre genoem." },
+  { id: 9, unit: "gedigte", question: "Wat is kruisrym (cross rhyme)?", options: ["AABB-patroon", "ABAB-patroon", "ABBA-patroon", "Geen patroon"], correct: 1, explanation: "Kruisrym volg 'n ABAB-patroon waar elke tweede reël rym." },
+  { id: 10, unit: "gedigte", question: "Enjambement beteken:", options: ["'n Pouse aan die einde van 'n reël", "'n Sin vloei oor na die volgende versreël sonder leesteken", "Herhaling van die eerste reël", "'n Rympatroon aan die einde van reëls"], correct: 1, explanation: "Enjambement is wanneer 'n gedagte/sin nie aan die einde van 'n versreël eindig nie, maar oorvloei na die volgende reël." },
+  { id: 11, unit: "gedigte", question: "Die 'toon' (tone) van 'n gedig verwys na:", options: ["Die klankpatroon", "Die digter se houding teenoor die onderwerp", "Die rymskema", "Die aantal strofes"], correct: 1, explanation: "Toon is die digter se houding (attitude) teenoor die onderwerp — bv. hartseer, ironies, kwaad, speels." },
+  { id: 12, unit: "gedigte", question: "Watter formule gebruik jy om gedigvrae in die eksamen te beantwoord?", options: ["Noem + Verduidelik", "Tegniek + Aanhaling + Effek + Tema", "Lees + Skryf + Kontroleer", "Inleiding + Liggaam + Slot"], correct: 1, explanation: "Die formule is: Noem die tegniek, haal aan uit die gedig, verduidelik die effek, en koppel dit aan die tema." },
+  { id: 13, unit: "gedigte", question: "'Die donker dae van droogte' is 'n voorbeeld van:", options: ["Personifikasie", "Alliterasie", "Vergelyking", "Enjambement"], correct: 1, explanation: "Dit is alliterasie — die herhaling van die 'd'-klank aan die begin van opeenvolgende woorde: donker, dae, droogte." },
+  { id: 14, unit: "gedigte", question: "'Ek het 'n miljoen keer gesê' is 'n voorbeeld van:", options: ["Alliterasie", "Personifikasie", "Hiperbool (hyperbole)", "Metafoor"], correct: 2, explanation: "Dit is hiperbool — 'n oordrywing vir effek. Niemand het regtig 'n miljoen keer iets gesê nie." },
+  // --- Skryfwerk ---
+  { id: 15, unit: "skryfwerk", question: "Wat is die korrekte aanhef vir 'n formele brief?", options: ["Liewe Mnr. Smit", "Hallo Mnr. Smit", "Geagte Mnr. Smit", "Beste Mnr. Smit"], correct: 2, explanation: "'Geagte' (Dear/Honoured) is die korrekte aanhef vir 'n formele brief. 'Liewe' is vir informele briewe." },
+  { id: 16, unit: "skryfwerk", question: "Hoeveel punte word vir 'Inhoud en beplanning' toegeken in skryfwerk?", options: ["15 punte", "20 punte", "30 punte", "50 punte"], correct: 2, explanation: "Inhoud en beplanning tel 30 punte uit 'n totaal van 50. Taal, styl en redigering tel 15, en struktuur tel 5." },
+  { id: 17, unit: "skryfwerk", question: "In 'n argumentatiewe opstel, wat is 'n 'teenargument' (counter-argument)?", options: ["Jou hoofargument", "'n Argument wat jou standpunt ondersteun", "'n Argument van die teenoorgestelde kant wat jy dan weerlê", "Die slot van jou opstel"], correct: 2, explanation: "'n Teenargument is wanneer jy die ander kant se standpunt erken en dit dan weerlê (rebuttal)." },
+  { id: 18, unit: "skryfwerk", question: "Watter groet gebruik jy aan die einde van 'n formele brief?", options: ["Liefde", "Groete", "Die uwe", "Sien jou"], correct: 2, explanation: "'Die uwe' is die formele groet (Yours faithfully/sincerely). 'Liefde' en 'Groete' is informeel." },
+  { id: 19, unit: "skryfwerk", question: "Watter verbindingswoord dui op 'n KONTRAS (contrast)?", options: ["Daarom", "Boonop", "Egter (however)", "Aangesien"], correct: 2, explanation: "'Egter' (however) dui op 'n kontras. 'Daarom' = gevolg, 'Boonop' = byvoeging, 'Aangesien' = oorsaak." },
+  { id: 20, unit: "skryfwerk", question: "Watter een is NIE 'n kenmerk van beskrywende skryfwerk nie?", options: ["Gebruik van sintuie (senses)", "Skep beelde in die leser se gedagtes", "Neem 'n standpunt in en oortuig die leser", "Gebruik van byvoeglike naamwoorde"], correct: 2, explanation: "Om 'n standpunt in te neem en te oortuig is argumentatiewe skryfwerk, nie beskrywend nie." },
+  // --- Taalstrukture en -konvensies ---
+  { id: 21, unit: "taalstrukture", question: "Watter sin is geskryf in die lydende vorm (passive voice)?", options: ["Die kind eet die appel.", "Die appel word deur die kind geëet.", "Die kind sal die appel eet.", "Die kind het die appel geëet."], correct: 1, explanation: "In die lydende vorm word die voorwerp (appel) die onderwerp en word 'word/is + voltooide deelwoord' gebruik. 'Die appel word deur die kind geëet' is lydend." },
+  { id: 22, unit: "taalstrukture", question: "Hoe word 'Ek is honger,' sê hy omskep na indirekte rede?", options: ["Hy sê dat hy honger was.", "Hy sê dat ek honger is.", "Hy sê dat hy honger is.", "Hy sê ek is honger."], correct: 2, explanation: "In indirekte rede verander 'ek' na 'hy' (aanpas by rapporteerder), en die sin word met 'dat' ingelei. Die tyd bly dieselfde as dit steeds relevant is." },
+  { id: 23, unit: "taalstrukture", question: "Wat is die superlatief (superlative) van 'goed'?", options: ["Goeder", "Goedste", "Beste", "Beter"], correct: 2, explanation: "'Goed' is onreëlmatig: goed (positief) \u2192 beter (komparatief) \u2192 beste (superlatief). Hierdie is 'n uitsondering op die reël." },
+  { id: 24, unit: "taalstrukture", question: "Watter sin gebruik die dubbele negatief (double negative) korrek?", options: ["Ek wil nie gaan.", "Ek wil nie gaan nie.", "Ek will nie gaan nie.", "Ek gaan nie nie."], correct: 1, explanation: "Die korrekte Afrikaanse dubbele negatief is 'Ek wil nie gaan nie' — 'nie' kom voor 'gaan' en aan die einde van die sin." },
+  { id: 25, unit: "taalstrukture", question: "Watter woord is 'n voegwoord (conjunction) wat 'n bysin (subordinate clause) inlei?", options: ["En", "Maar", "Omdat", "Of"], correct: 2, explanation: "'Omdat' (because) lei 'n bysin in waar die werkwoord na die einde van die sin gaan. 'En', 'maar', en 'of' verbind hoofsinne." },
+  { id: 26, unit: "taalstrukture", question: "Wat is die verlede tyd van 'ry' (to drive)?", options: ["Het gery", "Het gerely", "Het gerijde", "Het gery gehad"], correct: 0, explanation: "Die verlede tyd van 'ry' is 'het gery'. Voltooide deelwoord: ge- + ry = gery. Afrikaans gebruik 'het' as hulpwerkwoord vir verlede tyd." },
+  { id: 27, unit: "taalstrukture", question: "Watter afkorting beteken 'byvoorbeeld'?", options: ["nl.", "dws.", "bv.", "ens."], correct: 2, explanation: "'bv.' is die afkorting vir 'byvoorbeeld' (for example). 'nl.' = naamlik; 'dws.' = dit wil sê; 'ens.' = ensovoorts." },
+  { id: 28, unit: "taalstrukture", question: "In watter sin word die komma VERKEERD gebruik?", options: ["Ja, ek verstaan.", "Ek eet brood, botter en kaas.", "Hy is my broer, 'n dokter, wat in Kaapstad woon.", "Hy sê hy kom more."], correct: 3, explanation: "'Hy sê hy kom more' het geen komma nodig nie. Dit is 'n indirekte rede sonder aanhalingstekens. Die ander drie gebruik kommas korrek." },
+  { id: 29, unit: "taalstrukture", question: "Watter een is 'n bywoord van tyd (adverb of time)?", options: ["Vinnig", "Hier", "Gister", "Baie"], correct: 2, explanation: "'Gister' (yesterday) is 'n bywoord van tyd. 'Vinnig' = wyse; 'hier' = plek; 'baie' = graad." },
+  { id: 30, unit: "taalstrukture", question: "Watter sin is in die toekomende tyd (future tense)?", options: ["Sy het geloop.", "Sy loop in die park.", "Sy sal in die park loop.", "Sy loop gister."], correct: 2, explanation: "Die toekomende tyd word gevorm met 'sal' + infinitief. 'Sy sal in die park loop' = future tense." },
+  { id: 31, unit: "taalstrukture", question: "Wat is die komparatief (comparative) van 'min'?", options: ["Minder", "Minste", "Mins", "Minnste"], correct: 0, explanation: "'Min' is onreëlmatig: min (positief) \u2192 minder (komparatief) \u2192 minste (superlatief)." },
+  { id: 32, unit: "taalstrukture", question: "Watter voornaamwoord gebruik jy om beleefd met 'n ouer persoon te praat?", options: ["Jy", "Julle", "U", "Hulle"], correct: 2, explanation: "'U' is die beleefde tweede persoon (polite form of address) wat gebruik word met ouer mense of in formele situasies." },
+  // --- Literatuur ---
+  { id: 33, unit: "literatuur", question: "Wat is die klimaks (climax) van 'n plot?", options: ["Die begin van die verhaal waar karakters voorgestel word", "Die hoogtepunt van spanning in die verhaal", "Die oplossing van die konflik", "Die eerste konflik wat opduik"], correct: 1, explanation: "Die klimaks is die hoogtepunt (turning point) van die verhaal — die moment van grootste spanning of beslissing." },
+  { id: 34, unit: "literatuur", question: "Watter tipe vertellersperspektief gebruik 'ek' om te vertel?", options: ["Derde persoon alwetend", "Derde persoon beperk", "Eerste persoon", "Tweede persoon"], correct: 2, explanation: "Eerste persoon (first person) gebruik 'ek' as verteller. Ons ervaar die verhaal deur een karakter se oë en gedagtes." },
+  { id: 35, unit: "literatuur", question: "Wat is dramatiese ironie (dramatic irony)?", options: ["Wanneer die skrywer die teenoorgestelde sê van wat hy bedoel", "Wanneer die uitkoms anders is as wat verwag word", "Wanneer die leser iets weet wat die karakter nie weet nie", "Wanneer 'n karakter teen 'n sterker vyand veg"], correct: 2, explanation: "Dramatiese ironie ontstaan wanneer die leser inligting het wat karakters in die verhaal nie het nie. Dit skep spanning en betrokkenheid." },
+  { id: 36, unit: "literatuur", question: "Wat is vooruitwysing (foreshadowing)?", options: ["Wanneer die verteller terugkyk na die verlede", "Wanneer leidrade gegee word oor toekomstige gebeure", "Wanneer 'n karakter droom oor die toekoms", "Wanneer die slot plotseling verander"], correct: 1, explanation: "Vooruitwysing is 'n tegniek waar die skrywer subtiele leidrade inbou oor wat later gaan gebeur, wat spanning en verwagting skep." },
+  { id: 37, unit: "literatuur", question: "Wat is 'n ronde (round) karakter?", options: ["'n Karakter wat nie verander nie", "'n Karakter met een eienskap", "'n Komplekse, realistiese karakter wat ontwikkel", "'n Karakter wat net in die agtergrond is"], correct: 2, explanation: "Ronde (of dinamiese) karakters is kompleks — hulle het verskeie eienskappe, innerlike konflik, en ontwikkel deur die verhaal. Dit is meer realisties." },
+  { id: 38, unit: "literatuur", question: "Watter een is 'n voorbeeld van mens-teen-self konflik (person vs. self conflict)?", options: ["'n Karakter veg teen 'n tornado", "'n Karakter worstel met 'n gewetenskeuse", "'n Karakter en sy broer stry", "'n Karakter teen die wet van die land"], correct: 1, explanation: "Mens-teen-self konflik is innerlik — die karakter worstel met sy eie gedagtes, emosies, of morele besluite." },
+  { id: 39, unit: "literatuur", question: "Wat is simboliek (symbolism) in literatuur?", options: ["Woorde wat soos klanke klink", "Voorwerpe wat 'n dieper betekenis het as hul letterlike betekenis", "Die herhaling van 'n frase", "Wanneer karakters in drome kommunikeer"], correct: 1, explanation: "Simboliek is wanneer 'n voorwerp, plek, of persoon iets diepers verteenwoordig. Bv. 'n duif = vrede; donkerte = onwetendheid." },
+  { id: 40, unit: "literatuur", question: "Wat is die verskil tussen tema (theme) en onderwerp (subject)?", options: ["Hulle is dieselfde ding", "Onderwerp is die abstrakte boodskap; tema is die storie", "Tema is die abstrakte boodskap; onderwerp is waaroor die storie gaan", "Tema vertel ons wie die hoofkarakter is"], correct: 2, explanation: "Onderwerp = waaroor die verhaal gaan (bv. 'n oorlog). Tema = die abstrakte lewensles (bv. die sinloosheid van geweld)." },
+  { id: 41, unit: "literatuur", question: "Watter element beskryf WAAR en WANNEER 'n verhaal afspeel?", options: ["Plot", "Konflik", "Milieu/Omgewing (setting)", "Tema"], correct: 2, explanation: "Die milieu (setting) beskryf die plek (waar) en tyd (wanneer) van die verhaal, insluitend die atmosfeer wat dit skep." },
+  { id: 42, unit: "literatuur", question: "In watter volgorde gebeur die plotstruktuur (plot structure)?", options: ["Klimaks \u2192 Eksposisie \u2192 Stygende aksie \u2192 Dalende aksie \u2192 Ontknoping", "Eksposisie \u2192 Stygende aksie \u2192 Klimaks \u2192 Dalende aksie \u2192 Ontknoping", "Ontknoping \u2192 Klimaks \u2192 Eksposisie \u2192 Stygende aksie \u2192 Dalende aksie", "Stygende aksie \u2192 Eksposisie \u2192 Klimaks \u2192 Dalende aksie \u2192 Ontknoping"], correct: 1, explanation: "Die korrekte volgorde is: Eksposisie (bekendstel) \u2192 Stygende aksie (spanning bou) \u2192 Klimaks (hoogtepunt) \u2192 Dalende aksie \u2192 Ontknoping (slot)." },
+  { id: 43, unit: "literatuur", question: "Wat is verbale ironie (verbal irony)?", options: ["Wanneer die uitkoms anders is as verwag", "Wanneer jy die teenoorgestelde sê van wat jy bedoel", "Wanneer die leser meer weet as die karakter", "Wanneer 'n karakter met homself praat"], correct: 1, explanation: "Verbale ironie is wanneer iemand die teenoorgestelde sê van wat hulle bedoel — bv. 'Wat 'n heerlike dag!' tydens 'n storm." },
+  // --- Mondelinge ---
+  { id: 44, unit: "mondelinge", question: "Wat is die eerste stap in voorbereiding vir 'n voorbereide toespraak?", options: ["Begin onmiddellik praat", "Navors die onderwerp en organiseer jou gedagtes", "Skryf elke woord neer en memoriseer dit", "Kyk na jou notas die hele tyd"], correct: 1, explanation: "Voorbereiding vereis navorsing, beplanning, en organisasie van jou gedagtes in 'n duidelike struktuur: inleiding, liggaam, slot." },
+  { id: 45, unit: "mondelinge", question: "Wat beteken 'pas' (pace) in 'n toespraak?", options: ["Die volume van jou stem", "Die hoogte van jou stem", "Die spoed waarmee jy praat", "Die toon van jou stem"], correct: 2, explanation: "Pas (pace) is die spoed waarmee jy praat. Te vinnig klink senuweeagtig; te stadig verlies gehoor se aandag. 'n Matige pas is ideaal." },
+  { id: 46, unit: "mondelinge", question: "Watter een is NIE 'n assesseringskriteria vir mondelinge nie?", options: ["Taalgebruik", "Liggaamstaal en oogkontak", "Handskrif", "Inhoud en organisasie"], correct: 2, explanation: "Handskrif (handwriting) is vir geskrewe take, nie mondelinge nie. Mondelinge assesseer: inhoud, taal, voordrag, liggaamstaal, en tydhouding." },
+  { id: 47, unit: "mondelinge", question: "Hoelank moet oogkontak (eye contact) met 'n enkele persoon gehou word?", options: ["Minder as 'n sekonde", "2-3 sekondes per persoon", "10 sekondes per persoon", "Geen oogkontak — kyk na jou notas"], correct: 1, explanation: "Effektiewe oogkontak behels 2-3 sekondes per persoon voor jy na die volgende kyk. Dit skep verbinding sonder om opdringerig te wees." },
+  { id: 48, unit: "mondelinge", question: "By luisterbegrip (listening comprehension), wat moet jy EERS doen voor jy luister?", options: ["Jou oë toemaak", "Die vrae lees", "Jou notas organiseer", "Die spreker se biografie lees"], correct: 1, explanation: "Lees die vrae voor jy luister sodat jy weet waarop om te fokus. Dit help jou om sleutelinligting te identifiseer terwyl jy luister." },
+  { id: 49, unit: "mondelinge", question: "Watter liggaamstaal toon selfvertroue (confidence) tydens 'n toespraak?", options: ["Gebukte rug, arms gevou", "Regop houding, oogkontak, oop gebare", "Voortdurend jou notas lees", "Jou hande in jou sakke hou"], correct: 1, explanation: "Selfvertroue word getoon deur 'n regop houding, direkte oogkontak, en oop gebare. Dit kommunikeer dat jy die onderwerp bemeester het." },
+  { id: 50, unit: "mondelinge", question: "Wat is die doel van 'n onvoorbereide toespraak (impromptu speech)?", options: ["Om jou memorisering te toets", "Om jou vermoë te toets om spontaan te organiseer en te kommunikeer", "Om jou handskrif te toets", "Om jou kennis van grammatika te toets"], correct: 1, explanation: "Die onvoorbereide toespraak toets spontane denkvermoë, organisasie, en kommunikasie — vaardighede wat in die lewe noodsaaklik is." },
+  { id: 51, unit: "mondelinge", question: "Watter tegniek help jy om jou uitspraak (pronunciation) te verbeter?", options: ["Baie vinnig praat", "Sluk onduidelike klanke in", "Oefen voor 'n spieël en neem jouself op", "Lees net stilleees, nooit hardop nie"], correct: 2, explanation: "Oefen voor 'n spieël en neem jouself op — so kan jy jou eie uitspraak, tempo, en liggaamstaal analiseer en verbeter." },
+  { id: 52, unit: "mondelinge", question: "Watter een is 'n kenmerk van GOEIE voorlees (reading aloud)?", options: ["Praat so vinnig as moontlik", "Ignoreer leestekens", "Maak pouses by kommas en punte", "Verander nie jou toon nie"], correct: 2, explanation: "Goeie voorlees respekteer leestekens — kommas = kort pouse; punte = langer pouse. Dit help die gehoor om te verstaan en die betekenis te absorbeer." },
+  { id: 53, unit: "mondelinge", question: "Watter een help die meeste om senuweeagtigheid (nervousness) te hanteer?", options: ["Die toespraak aan die laaste minuut voorberei", "Deeglike voorbereiding en herhaaldelike oefening", "Vinnig praat sodat dit gouer verby is", "Jou oë toe hou tydens die toespraak"], correct: 1, explanation: "Deeglike voorbereiding is die beste remedie vir senuweeagtigheid. Hoe meer jy oefen, hoe meer selfvertroue ontwikkel jy." },
+  // --- Visuele Geletterdheid ---
+  { id: 54, unit: "visueel", question: "Wat is die eerste stap in die analise van 'n spotprent (cartoon)?", options: ["Skryf jou mening neer sonder om te kyk", "Identifiseer die konteks en wie/wat uitgebeeld word", "Kyk net na die kleure", "Lees die opskrif en ignoreer die beeld"], correct: 1, explanation: "Begin altyd met die identifikasie van wie/wat uitgebeeld word en die konteks. Dit stel jou in staat om die boodskap en tegnieke te analiseer." },
+  { id: 55, unit: "visueel", question: "Watter kleur dui gewoonlik op GEVAAR of DRINGENDHEID in advertensies?", options: ["Blou", "Groen", "Rooi", "Wit"], correct: 2, explanation: "Rooi is geassosieer met gevaar, dringendheid, energie, en passie. Advertensies gebruik rooi dikwels vir uitverkopings en dringende boodskappe." },
+  { id: 56, unit: "visueel", question: "Wat is die 'teikengehoor' (target audience) van 'n advertensie?", options: ["Die skrywer van die advertensie", "Die spesifieke groep mense vir wie die advertensie bedoel is", "Die mense wat reeds die produk koop", "Die drukker van die advertensie"], correct: 1, explanation: "Die teikengehoor is die spesifieke groep mense wat die advertensie probeer bereik — gebaseer op ouderdom, geslag, belange, ens." },
+  { id: 57, unit: "visueel", question: "Watter oorreedingstegniek gebruik bekende persone om 'n produk aan te beveel?", options: ["Bandwagon", "Skaarsheid (scarcity)", "Beroep op outoriteit/ethos", "Beroep op rede/logos"], correct: 2, explanation: "Beroep op outoriteit (ethos) gebruik bekende mense of kundiges om 'n produk te onderskryf — hul aansien oordra na die produk." },
+  { id: 58, unit: "visueel", question: "Wat is die verskil tussen 'n ikoon (icon) en 'n simbool (symbol) in semiotiek?", options: ["'n Ikoon het 'n arbitrêre verband; 'n simbool lyk soos wat dit voorstel", "'n Ikoon lyk soos wat dit voorstel; 'n simbool het 'n aangeleerde verband", "Hulle is dieselfde ding", "'n Ikoon is altyd digitaal; 'n simbool is altyd fisies"], correct: 1, explanation: "Ikoon: lyk soos wat dit verteenwoordig (bv. 'n foto). Simbool: die verband is aangeleerd en arbitrêr (bv. 'n stopbord)." },
+  { id: 59, unit: "visueel", question: "Watter element van 'n grafiek moet jy EERS lees?", options: ["Die data", "Die opskrif (title)", "Die legenda", "Die asse"], correct: 1, explanation: "Die opskrif (title) vertel jou waaroor die grafiek gaan en stel die konteks vir al die ander elemente. Lees dit altyd eers." },
+  { id: 60, unit: "visueel", question: "Wat is denotatiewe betekenis (denotation) van 'n visuele teks?", options: ["Die emosionele betekenis", "Die letterlike, direkte betekenis van wat jy sien", "Die verborge boodskap", "Die interpretasie van die gehoor"], correct: 1, explanation: "Denotasie is die letterlike betekenis — wat jy fisies sien. Konnotasie is die emosionele of kulturele assosiasie daarmee." },
+  { id: 61, unit: "visueel", question: "Watter lettertipe-styl word gesien as formeel en tradisioneel?", options: ["Sans-seriflettertipe (bv. Arial)", "Handlettertipe (script)", "Seriflettertipe (bv. Times New Roman)", "Dekoratiewe lettertipe"], correct: 2, explanation: "Seriflettertipes (met klein 'hakies' aan die einde van letters) word gesien as formeel, tradisioneel, en betroubaar — geskik vir amptelike dokumente." },
+  { id: 62, unit: "visueel", question: "Watter propagandategniek gebruik slegs positiewe feite en verberg negatiewe inligting?", options: ["Bandwagon", "Kaartleg (card-stacking)", "Stereotipering", "Getuienis (testimonial)"], correct: 1, explanation: "Kaartleg (card-stacking) is wanneer slegs die gunstige inligting getoon word om 'n eensydige prentjie te skep. Negatiewe feite word verberg." },
+];
+
+export const feynmanTopics: FeynmanTopic[] = [
+  {
+    id: "f1",
+    title: "Leestrategieë — Hoe om 'n Teks te Benader",
+    prompt: "Verduidelik die verskillende leestrategieë en hoe om 'n teks te benader vir begrip.",
+    keyConcepts: [
+      "Skandeer (scan) vir spesifieke inligting soos name, datums, syfers",
+      "Vlugtig lees (skim) om die hoofgedagte vinnig te kry — lees eerste en laaste sinne",
+      "Intensiewe lees vir detail en dieper begrip",
+      "Kontekstuele leidrade gebruik om onbekende woorde se betekenis af te lei",
+      "Die hoofgedagte is gewoonlik in die eerste of laaste sin van 'n paragraaf",
+      "Verskillende vraagtipes vereis verskillende antwoordstrategieë: letterlik, inferensieel, evaluerend",
+    ],
+  },
+  {
+    id: "f2",
+    title: "Opsommingstegnieke — Van Teks na Kern",
+    prompt: "Verduidelik die tegnieke vir 'n goeie opsomming en hoe om van 'n teks na die kernpunte te kom.",
+    keyConcepts: [
+      "Lees die teks minstens twee keer deeglik",
+      "Identifiseer en onderstreep hoofpunte (main points) in elke paragraaf",
+      "Laat voorbeelde, herhalings, en onnodige besonderhede weg",
+      "Herformuleer in jou eie woorde (paraphrase)",
+      "Hou by die woordgrens (gewoonlik 70 woorde)",
+      "Skryf in volsinne, een paragraaf, en tel jou woorde",
+    ],
+  },
+  {
+    id: "f3",
+    title: "Beeldspraak en Digterlike Tegnieke",
+    prompt: "Verduidelik die verskillende beeldspraak en digterlike tegnieke wat in poësie gebruik word.",
+    keyConcepts: [
+      "Metafoor: direkte vergelyking sonder 'soos' — bv. 'Die lewe is 'n reis'",
+      "Vergelyking (simile): gebruik 'soos' of 'net soos' — bv. 'Sy lag soos 'n klokkie'",
+      "Personifikasie: menslike eienskappe aan nie-menslike dinge — bv. 'Die wind fluister'",
+      "Alliterasie: herhaling van konsonantklank aan die begin — bv. 'donker dae van droogte'",
+      "Assonansie: herhaling van vokaalklank binne woorde",
+      "Hiperbool: oordrywing vir effek — bv. 'Ek het 'n miljoen keer gesê'",
+    ],
+  },
+  {
+    id: "f4",
+    title: "Gediganalise — Hoe om 'n Gedig te Ontleed",
+    prompt: "Verduidelik hoe om 'n gedig stap vir stap te ontleed vir die eksamen.",
+    keyConcepts: [
+      "Lees die gedig minstens 3 keer: vir begrip, vir tegnieke, vir dieper betekenis",
+      "Identifiseer die tema (sentrale boodskap), toon (digter se houding), en bui (leser se gevoel)",
+      "Kyk na woordkeuse (diction) — hoekom het die digter hierdie spesifieke woorde gekies?",
+      "Identifiseer rymskema (ABAB, AABB, ABBA), enjambement, en strofevorm",
+      "Formule vir antwoorde: Tegniek + Aanhaling + Effek + Tema",
+      "Let op klankeffekte: alliterasie, assonansie, onomatopee",
+    ],
+  },
+  {
+    id: "f5",
+    title: "Opstelskryfwerk — Beplanning tot Produk",
+    prompt: "Verduidelik die proses van opstelskryfwerk van beplanning tot die finale produk.",
+    keyConcepts: [
+      "Beplan altyd voor jy skryf: brainstorm, mindmap, of lys van idees",
+      "Inleiding: vang aandag met 'n vraag, aanhaling, stelling, of anekdote",
+      "Liggaam: 3–5 paragrawe, elk met 'n topiksin, ondersteuning, en slotsin",
+      "Slot: som hoofpunte op, eindig met 'n kragtige slotgedagte",
+      "Gebruik verbindingswoorde om paragrawe en idees te verbind",
+      "Redigeer: lees deur vir spelfoute, taalfoute, en sinstruktuur",
+    ],
+  },
+  {
+    id: "f6",
+    title: "Briefskryfwerk — Formeel vs. Informeel",
+    prompt: "Verduidelik die verskille tussen formele en informele briefskryfwerk en hul onderskeie formate.",
+    keyConcepts: [
+      "Formele brief: 'Geagte Mnr./Mev.' + 'Die uwe', volledige adresse, saaklike taal",
+      "Informele brief: 'Liewe [naam]' + 'Liefde/Groete', net jou adres, vriendskaplike taal",
+      "Formele brief het 'n onderwerpreël (subject line)",
+      "Albei benodig: jou adres, datum, aanhef, liggaam, groet, naam",
+      "Formeel: derdepersoonsaanspreekvorm. Informeel: eerste/tweedepersoon",
+      "Toon en register moet by die tipe brief pas",
+    ],
+  },
+  {
+    id: "f7",
+    title: "Tye, Stem en Rede — Die Drie Kernstrukture",
+    prompt: "Verduidelik die drie kernstrukture van Afrikaans: tye, stem (bedrywend/lydend), en rede (direk/indirek).",
+    keyConcepts: [
+      "Verlede tyd: 'het' + voltooide deelwoord (ge- + werkwoord) — bv. 'ek het gespeel'",
+      "Toekomende tyd: 'sal' + infinitief — bv. 'ek sal speel'",
+      "Bedrywend na lydend: voorwerp word onderwerp + 'word' + deelwoord + 'deur' + agent",
+      "Direkte \u2192 indirekte rede: aanhalingstekens weg, voeg 'dat' in, pas voornaamwoorde en tyd aan",
+      "Dubbele negatief: 'nie' voor die ontkende element EN aan die einde van die sin",
+      "Onreëlmatige trappe: goed-beter-beste; baie-meer-meeste; min-minder-minste",
+    ],
+  },
+  {
+    id: "f8",
+    title: "Sinstruktuur en Voegwoorde — Sinsverbinding",
+    prompt: "Verduidelik sinstruktuur en hoe voegwoorde gebruik word om sinne te verbind in Afrikaans.",
+    keyConcepts: [
+      "Hoofsin: staan alleen en maak sin — bv. 'Ek gaan huis toe.'",
+      "Bysin: afhanklik van 'n hoofsin, word ingelei deur 'n voegwoord — bv. 'omdat ek moeg is'",
+      "Na 'omdat', 'sodat', 'aangesien': werkwoord gaan na die einde van die bysin",
+      "Na 'want': normale woordorde (hoofsinverbinding)",
+      "Verbindingswoorde: en (byvoeging), maar (kontras), want (oorsaak), of (keuse)",
+      "Voornaamwoorde moet ooreenstem met die naamwoord waarna hulle verwys",
+    ],
+  },
+  {
+    id: "f9",
+    title: "Kortverhaalontleding — Plot, Karakter, Konflik",
+    prompt: "Verduidelik hoe om 'n kortverhaal te ontleed deur te fokus op plot, karakter, en konflik.",
+    keyConcepts: [
+      "Plot volg: eksposisie \u2192 stygende aksie \u2192 klimaks \u2192 dalende aksie \u2192 ontknoping",
+      "Konfliksoorte: mens-mens, mens-natuur, mens-samelewing, mens-self, mens-lot",
+      "Plat karakter: eendimensioneel, verander nie; Ronde karakter: kompleks, ontwikkel",
+      "Milieu (setting): plek + tyd + atmosfeer — dra by tot tema en konflik",
+      "Vertellersperspektief: eerste persoon (ek), derde persoon alwetend, derde persoon beperk",
+      "Tema vs. onderwerp: onderwerp = feitelik; tema = abstrakte lewensles",
+    ],
+  },
+  {
+    id: "f10",
+    title: "Literêre Terme — Ironie, Simboliek, Vooruitwysing",
+    prompt: "Verduidelik die belangrikste literêre terme: ironie, simboliek, en vooruitwysing.",
+    keyConcepts: [
+      "Verbale ironie: sê die teenoorgestelde van wat jy bedoel",
+      "Situasionele ironie: uitkoms is anders as verwag — bv. 'n brandweerstasie wat brand",
+      "Dramatiese ironie: leser weet meer as die karakter — skep spanning",
+      "Simboliek: 'n voorwerp/plek/persoon het 'n dieper betekenis — bv. duif = vrede",
+      "Vooruitwysing: leidrade oor toekomstige gebeure skep verwagting",
+      "Karakterontleding: uiterlik + persoonlikheid + verhoudings + ontwikkeling + rol in tema",
+    ],
+  },
+  {
+    id: "f11",
+    title: "Toespraaklewer — Van Notas na Voordrag",
+    prompt: "Verduidelik hoe om 'n toespraak voor te berei en te lewer, van notas tot voordrag.",
+    keyConcepts: [
+      "Struktuur: groet gehoor \u2192 inleiding \u2192 liggaam (2-3 punte) \u2192 slot \u2192 afskeid",
+      "Liggaamstaal: regop houding, oogkontak (2-3 sek/persoon), oop gebare",
+      "Stem: wissel toon (pitch), volume, en pas (spoed) vir boeiende voordrag",
+      "Senuweeagtigheid: deeglike voorbereiding, diep asemhaling, fokus op boodskap",
+      "Onvoorbereide toespraak: besluit op hoofpunt \u2192 2-3 idees \u2192 sterk opening en sluiting",
+      "Oefen hardop, voor 'n spieël, of met 'n vriend vir terugvoer",
+    ],
+  },
+  {
+    id: "f12",
+    title: "Luisterbegrip en Voorlees — Aktiewe Luister en Voordrag",
+    prompt: "Verduidelik die tegnieke vir luisterbegrip en effektiewe voorlees.",
+    keyConcepts: [
+      "Voor luisterbegrip: lees die vrae sodat jy weet waarop om te fokus",
+      "Maak aantekeninge tydens luister — fokus op hoofpunte, nie elke woord nie",
+      "Beantwoord in volsinne met spesifieke verwysing na die gesproke teks",
+      "Voorlees: lees teks stilleees eers; verstaan inhoud; maak pouses by leestekens",
+      "Beklemtoon sleutelwoorde en wissel toon vir verskillende karakters/emosies",
+      "Kyk gereeld op na gehoor — oogkontak selfs tydens voorlees verbeter betrokkenheid",
+    ],
+  },
+  {
+    id: "f13",
+    title: "Advertensie- en Spotprentanalise",
+    prompt: "Verduidelik hoe om advertensies en spotprente te analiseer in visuele geletterdheid.",
+    keyConcepts: [
+      "Advertensie: identifiseer teikengehoor, doel, visuele elemente, taalgebruik, en oorreedingstegnieke",
+      "Oorreedingstegnieke: pathos (emosie), ethos (outoriteit), logos (logika/statistiek)",
+      "Spotprent: kyk na konteks, simbole, oordrywing, sarkasme, en die politiese/sosiale boodskap",
+      "Kleur: rooi = gevaar/dringend; blou = vertroue; groen = natuur/gesondheid; geel = aandag",
+      "Lettertipe: serif = formeel/tradisioneel; sans-serif = modern/skoon; vetdruk = klem",
+      "Slagspreuk: kort, gedenkwaardig, dui voordeel aan — gebruik rym, alliterasie, woordspel",
+    ],
+  },
+  {
+    id: "f14",
+    title: "Grafieke, Tabelle en Visuele Tekste — Data Interpretasie",
+    prompt: "Verduidelik hoe om grafieke, tabelle, en ander visuele tekste te interpreteer.",
+    keyConcepts: [
+      "Lees altyd die opskrif (title) eers — dit vertel jou die doel van die grafiek/tabel",
+      "Identifiseer die asse: x-as (horisontaal) en y-as (vertikaal) en wat gemeet word",
+      "Lees die legenda/sleutel om kleure of simbole te verstaan",
+      "Identifiseer tendense: stygend, dalend, konstant, skommelend",
+      "Maak afleidings gebaseer op die data — beantwoord vrae met spesifieke syfers",
+      "Denotasie vs. konnotasie: wat jy sien (letterlik) vs. wat dit beteken (dieper)",
+    ],
+  },
+];
+
+export const notes: Note[] = [
+  {
+    id: "n1",
+    title: "Begrip en Opsomming",
+    content: `Begrip en Opsomming is twee van die kernvaardighede in die Afrikaans-eksamen. By begrip (comprehension) word jy getoets op jou vermoë om 'n teks te lees en vrae daaroor te beantwoord. Hierdie vrae kan letterlik (literal), inferensieel (inferential), of evaluerend (evaluative) van aard wees. Letterlike vrae het hul antwoord direk in die teks. Inferensiële vrae vereis dat jy afleidings maak — die antwoord is nie direk gespel nie, maar jy kan dit aflei uit die konteks. Evaluerende vrae vra jou mening, wat jy moet motiveer.
+
+Effektiewe leestrategieë sluit in: skandeer (scanning) vir spesifieke inligting soos datums en name; vlugtig lees (skimming) om die hoofgedagte vinnig te kry; en intensiewe lees (intensive reading) vir detail en begrip. Gebruik altyd kontekstuele leidrade (context clues) om onbekende woorde se betekenis te verstaan — kyk na die omliggende woorde en sinne.
+
+Die hoofgedagte (main idea) van 'n paragraaf word gewoonlik in die eerste of laaste sin gevind. Dit is die topiksin wat die res van die paragraaf ondersteun.
+
+By die opsomming (summary) moet jy die hoofpunte van 'n teks identifiseer en dit in jou eie woorde (in your own words) herformuleer (paraphrase). Die woordgrens is gewoonlik 70 woorde. Moenie voorbeelde, herhalings, of onnodige besonderhede insluit nie. Skryf in volsinne in een paragraaf, en tel jou woorde — skryf die getal neer.
+
+Onthou: die verskil tussen 'n feit (fact) en 'n mening (opinion) is dat 'n feit bewys kan word, terwyl 'n mening 'n persoonlike siening is. Die skrywer se doel (author's purpose) kan wees om in te lig (inform), te oorreed (persuade), te vermaak (entertain), of te onderrig (instruct).`,
+  },
+  {
+    id: "n2",
+    title: "Gedigte en Poëtiese Tegnieke",
+    content: `Gediganalise vereis dat jy op 'n strukturele, linguistiese, en tematiese vlak na 'n gedig kyk. Lees die gedig minstens drie keer: eers vir algemene begrip, dan vir digterlike tegnieke, en ten slotte vir die dieper betekenis.
+
+Beeldspraak (figurative language) sluit in: die metafoor (metaphor) — 'n direkte vergelyking sonder 'soos', bv. 'Die lewe is 'n reis'; die vergelyking (simile) — 'n vergelyking met 'soos' of 'net soos', bv. 'Sy lag soos 'n klokkie'; personifikasie (personification) — menslike eienskappe aan nie-menslike dinge, bv. 'Die wind fluister'; en hiperbool (hyperbole) — 'n oordrywing vir effek, bv. 'Ek het 'n miljoen keer gesê.'
+
+Klankeffekte sluit in: alliterasie (alliteration) — herhaling van konsonantklank aan die begin van woorde, bv. 'donker dae van droogte'; assonansie (assonance) — herhaling van vokaalklank; en onomatopee (onomatopoeia) — woorde wat soos klanke klink, bv. 'brom', 'kraak'.
+
+Rympatrone: kruisrym (ABAB), paarrym (AABB), omarmde rym (ABBA). Enjambement is wanneer 'n sin oor die versreëleinde na die volgende reël vloei sonder leesteken.
+
+Die tema (theme) is die sentrale boodskap — bv. liefde, dood, identiteit. Die toon (tone) is die digter se houding; die bui (mood) is die gevoel wat die gedig wek.
+
+Gebruik die formule vir antwoorde: Tegniek + Aanhaling + Effek + Tema. Ironie sluit verbale, situasionele, en dramatiese ironie in. Vrye vers het geen vaste rymskema; vaste versvorme soos die sonnet volg streng reëls.`,
+  },
+  {
+    id: "n3",
+    title: "Skryfwerk en Teksvorme",
+    content: `Skryfwerk in die Afrikaans-eksamen dek verskeie teksvorme. Assessering is gebaseer op: inhoud en beplanning (30 punte), taal, styl en redigering (15 punte), en struktuur (5 punte) — totaal 50 punte.
+
+Die opstel (essay) het 'n vaste struktuur: inleiding (introduction) om aandag te vang, liggaam (body) met 3-5 paragrawe elk met 'n topiksin, en 'n slot (conclusion) wat afsluit. Beplan altyd voor jy skryf — gebruik 'n gedagtekart (mind map) of lys. Argumentatiewe opstelle neem 'n standpunt in en gebruik teenargumente (counter-arguments) en weerleggings (rebuttals).
+
+Register (register) is die vlak van formaliteit: formeel vir amptelike kommunikasie, informeel vir persoonlike kommunikasie. Die formele brief gebruik 'Geagte Mnr./Mev.' en 'Die uwe'; die informele brief gebruik 'Liewe [naam]' en 'Liefde/Groete'. Albei het 'n adres, datum, liggaam, en groet, maar verskil in toon en detail.
+
+Ander teksvorme: 'n artikel (article) het 'n pakkende opskrif, die wie-wat-waar-wanneer-waarom struktuur, en kort paragrawe; 'n dialoog (dialogue) gebruik aanhalingstekens en sê-werkwoorde; 'n dagboekinskrywing (diary entry) is persoonlik en in eerste persoon; 'n toespraak (speech) spreek 'n gehoor direk aan met retoriese tegnieke.
+
+Verbindingswoorde (linking words) soos 'egter' (contrast), 'boonop' (addition), 'aangesien' (cause), en 'gevolglik' (result) verbind idees. Redigeer altyd: kontroleer spelling, grammatika, en sinstruktuur.`,
+  },
+  {
+    id: "n4",
+    title: "Taalstrukture en -konvensies",
+    content: `Taalstrukture en -konvensies dek die grammatikale reëls van Afrikaans wat jy in die eksamen moet beheers.
+
+Die drie tye (tenses) in Afrikaans: die teenwoordige tyd (present tense) gebruik die werkwoord sonder hulpwerkwoord — 'Ek speel'; die verlede tyd (past tense) gebruik 'het' + voltooide deelwoord (ge- + werkwoord) — 'Ek het gespeel'; die toekomende tyd (future tense) gebruik 'sal' + infinitief — 'Ek sal speel'. Let op onreëlmatige vorme: is \u2192 was, kan \u2192 kon.
+
+Direkte rede (direct speech) haal die presiese woorde aan met aanhalingstekens. Indirekte rede (indirect speech) rapporteer dit sonder aanhalingstekens, met 'dat' ingelei, aangepaste voornaamwoorde, en soms aangepaste tyd.
+
+Die bedrywende vorm (active voice) het 'n onderwerp wat die handeling uitvoer. Die lydende vorm (passive voice) gebruik 'word/is' + voltooide deelwoord + 'deur' + agent — die voorwerp word die nuwe onderwerp.
+
+Die dubbele negatief is 'n kenmerk van Afrikaans: 'nie' kom voor die ontkende element EN aan die einde van die sin — 'Ek gaan nie skool toe nie.' Dit is grammatikaal korrek.
+
+Trappe van vergelyking: positief \u2192 komparatief (-er) \u2192 superlatief (-ste). Onreëlmatig: goed-beter-beste; baie-meer-meeste; min-minder-minste.
+
+Voegwoorde (conjunctions) verbind sinne: 'want' lei 'n hoofsin in (normale woordorde); 'omdat' lei 'n bysin in (werkwoord aan die einde). Voornaamwoorde, byvoeglike naamwoorde, bywoorde, leestekens, en afkortings is ook deel van hierdie afdeling.`,
+  },
+  {
+    id: "n5",
+    title: "Literatuur: Kortverhaal en Roman",
+    content: `Literêre analise in Afrikaans FAL fokus op die interpretasie en kritiese bespreking van tekste. Vir die kortverhaal (short story) en roman (novel) moet jy die volgende elemente bemeester.
+
+Die plot (gebeure/handeling) volg 'n vaste struktuur: eksposisie (karakters en milieu word voorgestel) \u2192 stygende aksie (spanning bou) \u2192 klimaks (hoogtepunt) \u2192 dalende aksie (gevolge) \u2192 ontknoping (oplossing). Die klimaks is die draai- of spitstepunt.
+
+Konflik (conflict) is die dryfkrag van enige verhaal: mens teen mens, mens teen natuur, mens teen samelewing, mens teen self (innerlike konflik), of mens teen lot. Innerlike konflik skep komplekse, realistiese karakters.
+
+Karakters word ingedeel as plat (flat/static — eendimensioneel, verander nie) of rond (round/dynamic — kompleks, ontwikkel). Karakterontleding behels: uiterlike voorkoms, persoonlikheid (met teksbewyse), verhoudings, ontwikkeling, en rol in die tema.
+
+Die milieu (setting) — plek, tyd, en atmosfeer — dra by tot die tema en konflik. Die vertellersperspektief (narrative perspective) bepaal hoe die verhaal vertel word: eerste persoon (ek), derde persoon alwetend, of derde persoon beperk.
+
+Literêre terme sluit in: simboliek (symbolism) — dieper betekenis van voorwerpe/plekke; vooruitwysing (foreshadowing) — leidrade oor toekomstige gebeure; en die drie tipes ironie — verbale, situasionele, en dramatiese.
+
+Tema (theme) is die abstrakte lewensles; onderwerp (subject) is waaroor die verhaal gaan. Konteks — histories, kultureel, biografies — verryk jou analise.`,
+  },
+  {
+    id: "n6",
+    title: "Mondelinge Kommunikasie",
+    content: `Die mondelinge komponent (oral assessment) toets jou vermoë om effektief te kommunikeer in gesproke Afrikaans. Dit sluit voorbereide en onvoorbereide toesprake, voorlees, en luisterbegrip in.
+
+'n Voorbereide toespraak (prepared speech) vereis beplanning: identifiseer jou onderwerp, navors, organiseer jou gedagtes in inleiding-liggaam-slot, en oefen meermale. Die onvoorbereide toespraak (impromptu speech) gee jou min tyd — besluit vinnig op 'n hoofpunt en 2-3 ondersteunende idees.
+
+Assesseringskriteria sluit in: inhoud (is die inligting relevant en georganiseer?); taalgebruik (woordeskat, grammatika, register); voordrag (toon, volume, pas); liggaamstaal (houding, oogkontak, gebare); en tydsbeheersing.
+
+Liggaamstaal kommunikeer selfvertroue: staan regop, maak oogkontak (2-3 sekondes per persoon), gebruik oop gebare, en laat jou gesigsuitdrukkings by jou boodskap pas. Toon (pitch), volume, en pas (pace) moet wissel — monotone voordrag verloor die gehoor se aandag.
+
+Om senuweeagtigheid te hanteer: berei deeglik voor, oefen voor 'n spieël of vriend, haal diep asem, en fokus op jou boodskap eerder as op jouself.
+
+By voorlees (reading aloud): lees die teks eers stilleees, verstaan die inhoud, maak pouses by leestekens, beklemtoon sleutelwoorde, en wissel jou toon.
+
+By luisterbegrip (listening comprehension): lees die vrae voor jy luister, maak aantekeninge tydens luister, en fokus op hoofpunte. Beantwoord in volsinne met teksbewyse.`,
+  },
+  {
+    id: "n7",
+    title: "Visuele Geletterdheid",
+    content: `Visuele geletterdheid (visual literacy) is die vermoë om visuele tekste te lees, te analiseer, en te interpreteer. Visuele tekste sluit spotprente (cartoons), advertensies (advertisements), grafieke (graphs), tabelle (tables), foto's, en ander grafiese materiaal in.
+
+By spotprentanalise kyk jy na: wie/wat uitgebeeld word; die konteks; simbole en hul betekenis; tegnieke soos oordrywing (exaggeration) en sarkasme; en die skrywer se boodskap of bias.
+
+Advertensie-analise fokus op: die teikengehoor (target audience); die doel (purpose); visuele elemente (kleur, uitleg, lettertipe, beelde); taalgebruik (slagspreuk, retoriese vrae); en oorreedingstegnieke — pathos (emosie), ethos (outoriteit), logos (logika/statistiek), bandwagon, en skaarsheid.
+
+Kleur dra betekenis: rooi = gevaar/passie; blou = vertroue/kalmte; groen = natuur/gesondheid; geel = aandag/waarskuwing. Lettertipe-keuse kommunikeer ook: serif = tradisioneel/formeel; sans-serif = modern/skoon.
+
+By grafiekanalise: lees eers die opskrif, dan die asse, dan die legenda. Identifiseer tendense (stygend, dalend, konstant) en maak afleidings uit die data met verwysing na spesifieke syfers.
+
+Semiotiek (die studie van tekens): ikone lyk soos wat hulle voorstel; indekse het 'n direkte verband (rook = vuur); simbole het 'n aangeleerde verband (stopbord = stop).
+
+Denotatiewe betekenis is letterlik wat jy sien; konnotatiewe betekenis is die assosiasie of emosionele betekenis. Propagandategnieke soos stereotipering, kaartleg (card-stacking), en getuienis manipuleer die gehoor. Uitleg (layout) bepaal watter elemente die meeste aandag kry.`,
+  },
+];
